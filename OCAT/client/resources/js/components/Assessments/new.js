@@ -1,4 +1,10 @@
 import React, { Component } from "react";
+import { useForm } from "react-hook-form";
+
+//import Select from "react-select";
+//import { useForm, Controller } from "react-hook-form";
+//import MaterialUIInput from "@material-ui/core/Input";
+//import { Input as AntdInput } from "antd";
 //import AssessmentNew from "AssessmentNew";
 //import "./appmodule.js";
 //import "./App.js";
@@ -7,98 +13,86 @@ import React, { Component } from "react";
  <div id="app-root"></div>
   <script src="/js/app.bundle.js"></script>
 </body>;*/
-export class AssessmentNew extends Component {
+//export class AssessmentNew extends Component {
   //state = {};
-  render() {
+ // render() {
+    
+    /*function App() {
+      const { register, setValue, handleSubmit, errors } = useForm();
+      const onSubmit = handleSubmit(({ catdetails, Insrtumentname, calculatedscore, determinedrisklevel }) => {
+        console.log(catdetails, Insrtumentname, calculatedscore, determinedrisklevel);
+      }); */
+ function  AssessmentNew()
+{
+  const  { register, setValue, handleSubmit, errors } = useForm();
+  
+  const onSubmit =({ catdetails, Insrtumentname, calculatedscore, determinedrisklevel }) =>
+  {
+      console.log(catdetails, Insrtumentname, calculatedscore, determinedrisklevel);
+   }
     return (
-      <>
-        <form action="/my-handling-form-page" method="post">
-          <u1>
-            <li>
-              <label for="cat details">cat details:</label>
-              <input type="text" id="cat details" name="cat details"></input>
-            </li>
-          </u1>
-          <u1>
-            <li>
-              <label for=" instrument name"> instrument name:</label>
-              <textarea
-                id=" instrument name"
-                name=" instrument name"
-              ></textarea>
-            </li>
-          </u1>
-          <u1>
-            <li>
-              <label for="score">calculated score:</label>
-              <textarea
-                id="calculated score"
-                name="calculated score"
-              ></textarea>
-            </li>
-          </u1>
-          <u1>
-            <li>
-              <label for="risk level">determined risk level:</label>
-              <textarea
-                id="determined risk level"
-                name="determined risk level"
-              ></textarea>
-            </li>
-          </u1>
-          <body>
-            <div id="app-root"></div>
-            <script src="/js/app.bundle.js"></script>
-            <p>1. Previous contact with the Cat Judicial System:</p>
-            <input type="radio" id="no" name="no" value="yes/no"></input>
-            <label for="no">No (score=0)</label>
-            <br></br>
-            <input type="radio" id="yes" name="yes" value="yes/no"></input>
-            <label for="yes">yes(score=1)</label>
-            <br></br>
-            <p>2. Physical altercations with other cats</p>
-            <input type="radio" id="no" name="no" value="yes/no"></input>
-            <label for="no">0-3 altercations (score = 0)</label>
-            <br></br>
-            <input type="radio" id="yes" name="yes" value="yes/no"></input>
-            <label for="yes">3+ altercations (score = 1)</label>
-            <br></br>
+<div>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <label>cat details</label>
+          <input name="catdetails" ref={register} />
+          <label>catdetails</label>
+          <input name="Insrtumentname" ref={register} />
+          <label>Insrtumentname</label>
+          <input name="calculatedscore" ref={register} />
+          <label>calculatedscore</label>
+          <input name=" determinedrisklevel" ref={register} />
+          <label>determinedrisklevel</label>
+          
+      
+          
 
-            <p>
-              3.Physical altercations with owner (scratching, biting, etc...)
-            </p>
-            <input type="radio" id="no" name="no" value="yes/no"></input>
-            <label for="no">No (score=0)</label>
-            <br></br>
-            <input type="radio" id="yes" name="yes" value="yes/no"></input>
-            <label for="yes">yes(score=1)</label>
-            <br></br>
-
-            <p>4.Plays well with dogs</p>
-            <input type="radio" id="no" name="no" value="yes/no"></input>
-            <label for="no">10+ altercations (score = 1)</label>
-            <br></br>
-            <input type="radio" id="yes" name="yes" value="yes/no"></input>
-            <label for="yes">0-10 altercations (score = 0)</label>
-            <br></br>
-
-            <p>5. Hisses at strangers</p>
-            <input type="radio" id="no" name="no" value="yes/no"></input>
-            <label for="no">yes (score=1)</label>
-            <br></br>
-            <input type="radio" id="yes" name="yes" value="yes/no"></input>
-            <label for="yes">no(score=0)</label>
-            <br></br>
-            <button type="submit" value="Submit">
-              Submit
-            </button>
-            <button type="reset" value="Reset">
-              Reset
-            </button>
-          </body>
+          <Input label="1. Previous contact with the Cat Judicial System:" register={register} required />
+          <Select label="yes/no" ref={register} />
+          <input type="radio" id="no" name="no" value="yes/no"></input>
+                <label for="no">No (score=0)</label>
+    <br></br>
+          <input type="radio" id="yes" name="yes" value="yes/no"></input>
+                <label for="yes">yes(score=1)</label>
+    <br></br>
+          <Input label="2. Physical altercations with other cats" register={register} required />
+          <Select label="yes/no" ref={register} />
+          <input type="radio" id="no" name="no" value="yes/no"></input>
+                <label for="no">0-3 altercations (score = 0)</label>
+                <br></br>
+                <input type="radio" id="yes" name="yes" value="yes/no"></input>
+                <label for="yes">3+ altercations (score = 1)</label>
+                <br></br>
+   < Input label="3.Physical altercations with owner (scratching, biting, etc...)" register={register} required />
+          <Select label="yes/no" ref={register} />
+          <input type="radio" id="no" name="no" value="yes/no"></input>
+                <label for="no">No (score=0)</label>
+                <br></br>
+                <input type="radio" id="yes" name="yes" value="yes/no"></input>
+                <label for="yes">yes(score=1)</label>
+                <br></br>
+    <Input label="4.Plays well with dogs" register={register} required />
+          <Select label="yes/no" ref={register} />
+          <input type="radio" id="no" name="no" value="yes/no"></input>
+                <label for="no">10+ altercations (score = 1)</label>
+                <br></br>
+                <input type="radio" id="yes" name="yes" value="yes/no"></input>
+                <label for="yes">0-10 altercations (score = 0)</label>
+                <br></br>
+    <Input label="5. Hisses at strangers" register={register} required />
+          <Select label="yes/no" ref={register} />
+          <input type="radio" id="no" name="no" value="yes/no"></input>
+                <label for="no">yes (score=1)</label>
+                <br></br>
+                <input type="radio" id="yes" name="yes" value="yes/no"></input>
+                <label for="yes">no(score=0)</label>
+                <br></br>
+            <input type="submit" />
+<button type="submit">submit</button>
         </form>
-      </>
-    );
-  }
-}
-export default AssessmentNew;
+        </div>
+      );
+        }
+      
+
+  
+export default  AssessmentNew;
