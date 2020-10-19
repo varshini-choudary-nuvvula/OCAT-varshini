@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 import { DashboardBulletin } from "../components/Dashboard/bulletin";
-import  AssessmentNew  from "../components/Assessments/new";
+import { AssessmentNew}  from "../components/Assessments/new";
 import { AssessmentList } from "../components/Assessments/list";
 //import React, { Component } from "react";
 //import { useForm } from "react-hook-form";

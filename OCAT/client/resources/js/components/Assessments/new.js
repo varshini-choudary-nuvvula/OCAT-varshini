@@ -1,21 +1,13 @@
 import React, { Component } from "react";
 import { useForm } from "react-hook-form";
 
-//import Select from "react-select";
-//import { useForm, Controller } from "react-hook-form";
-//import MaterialUIInput from "@material-ui/core/Input";
-//import { Input as AntdInput } from "antd";
-//import AssessmentNew from "AssessmentNew";
-//import "./appmodule.js";
-//import "./App.js";
-//import "react-dnd-html5-backend-backend";
 /*<body>
  <div id="app-root"></div>
   <script src="/js/app.bundle.js"></script>
 </body>;*/
-//export class AssessmentNew extends Component {
+export class AssessmentNew extends Component {
   //state = {};
- // render() {
+ render() {
     
     /*function App() {
       const { register, setValue, handleSubmit, errors } = useForm();
@@ -31,6 +23,9 @@ import { useForm } from "react-hook-form";
       console.log(catdetails, Insrtumentname, calculatedscore, determinedrisklevel);
    }
     return (
+          <body>
+ <div id="app-root"></div>
+  <script src="/js/app.bundle.js"></script>
 <div>
         <form onSubmit={handleSubmit(onSubmit)}>
           <label>cat details</label>
@@ -90,9 +85,10 @@ import { useForm } from "react-hook-form";
 <button type="submit">submit</button>
         </form>
         </div>
+       </body>
       );
         }
-      
-
+}
+}
   
 export default  AssessmentNew;
